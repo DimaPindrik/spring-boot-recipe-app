@@ -1,6 +1,7 @@
 package com.devdim.recipeapp.spring5recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * created by Dima on 8/5/2019.
@@ -19,6 +20,9 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients;
 
     @Lob
     private Byte[] image;
