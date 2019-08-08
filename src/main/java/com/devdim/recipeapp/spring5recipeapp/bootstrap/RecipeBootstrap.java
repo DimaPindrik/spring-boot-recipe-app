@@ -112,7 +112,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         Category italianCategory = italianCategoryOptional.get();
         Category israelienCategory = israelienCategoryOptional.get();
 
-        // Yummy Guac
+        // Yummy Guac Recipe
         Recipe guacRecipe = new Recipe();
         guacRecipe.setDescription("Perfect Guacamole");
         guacRecipe.setPrepTime(10);
@@ -121,12 +121,11 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setDirections("direction ...");
         Note guacNotes = new Note();
         guacNotes.setRecipeNotes("notes ...");
-        guacNotes.setRecipe(guacRecipe);
 
         guacRecipe.setNote(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(.5), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("kosher salt", new BigDecimal(.5), teaSpoonUom));
 
         guacRecipe.getCategories().add(americanCategory);
 
