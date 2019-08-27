@@ -1,5 +1,9 @@
 package com.devdim.recipeapp.spring5recipeapp.services;
 
+import com.devdim.recipeapp.spring5recipeapp.commands.CategoryCommand;
+import com.devdim.recipeapp.spring5recipeapp.converters.CategoryCommandToCategory;
+import com.devdim.recipeapp.spring5recipeapp.converters.CategoryToCategoryCommand;
+import com.devdim.recipeapp.spring5recipeapp.domain.Category;
 import com.devdim.recipeapp.spring5recipeapp.domain.Recipe;
 import com.devdim.recipeapp.spring5recipeapp.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
