@@ -9,6 +9,7 @@ import com.devdim.recipeapp.spring5recipeapp.repositories.CategoryRepository;
 import com.devdim.recipeapp.spring5recipeapp.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,6 +39,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public CategoryCommand saveCategoryCommand(CategoryCommand command) {
         Category detachedCategory = categoryCommandToCategory.convert(command);
         Category savedCategory = categoryRepository.save(detachedCategory);
